@@ -16,11 +16,17 @@ python run_lm_predict.py \
   --output_dir=/tmp/lm_output/
 ```
 
-output
+for the following test case
 
 ```bash
-cat /tmp/lm/output/test_result.json
+$ cat data/lm/test.en.tsv 
+there is a book on the desk
+there is a plane on the desk
+there is a book in the desk
+
+$ cat /tmp/lm/output/test_result.json
 ```
+output:
 
 ```yml
 [
