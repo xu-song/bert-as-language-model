@@ -1,7 +1,35 @@
 ## BERT as Language Model
 
 
+For a sentence $S = w_1, w_2,..., w_k$, we have
+
+$$
+p(S) = \prod_{i=1}^{k} p(w_i | context)
+$$
+
+
+
+In traditional language model, such as RNN,  $context = w_1, ..., w_{i-1}$, 
+$$
+p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1})
+$$
+
+In bidirectional language model, it has larger context, $context = w_1, ..., w_{i-1},w_{i+1},...,w_k$,
+
+$$
+p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k)
+$$
+
+<!-- n-gram
+n-gram models construct tables of conditional probabilities for the next word,
+
+Under Markov assumption, the context is the all the 
+-->
+
+
 ### test-case
+
+> [more cases: 中文](cases/test.zh.md)
 
 
 ```bash
@@ -131,7 +159,6 @@ output:
   }
 ]
 ```
-
 
 
 
