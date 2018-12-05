@@ -1,12 +1,14 @@
 
 # 总体评价
 
-char-level的语言模型，由于词组内的高概率，会使整个句子ppl普遍偏高。句子间的相对ppl还靠谱。
 
-单个word/char的概率预测效果较好。
+1. char-level的语言模型，由于词组内的高概率，会使整个句子ppl普遍偏高。
+1. 句子间的相对ppl还靠谱。
+1. 双向语言模型，单个word/char的概率预测效果较好。
 
 > 建议:
 用分词后的中文重新pretrain，然后进行word-level language model predict。
+
 
 # 中文测试
 

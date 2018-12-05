@@ -14,11 +14,16 @@ $$
 p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1})
 $$
 
-In bidirectional language model, it has larger context, $context = w_1, ..., w_{i-1},w_{i+1},...,w_k$,
+In bidirectional language model, it has larger context, $context = w_1, ..., w_{i-1},w_{i+1},...,w_k$.
+In this implementation, we simply adopt the following approximation,
 
 $$
-p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k)
+p(S) \approx \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k)
 $$
+<!--
+1. 近似相等
+2. 句子越长，单个word预测的概率越大，ppl越大？传统的RNN也有这个问题
+-->
 
 <!-- n-gram
 n-gram models construct tables of conditional probabilities for the next word,
