@@ -15,6 +15,7 @@ In traditional language model, such as RNN,  <!-- context = w_1, ..., w_{i-1} --
 
 In bidirectional language model, it has larger context, <!-- context = w_1, ..., w_{i-1},w_{i+1},...,w_k -->
 ![equ5](https://user-images.githubusercontent.com/13825126/51437442-781a9600-1cd9-11e9-8207-87718b8f6a28.gif).
+
 In this implementation, we simply adopt the following approximation,
 
 ![equ6](https://user-images.githubusercontent.com/13825126/51437443-78b32c80-1cd9-11e9-917e-88824d3e456f.gif)
