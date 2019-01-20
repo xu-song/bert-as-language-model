@@ -1,25 +1,25 @@
 ## BERT as Language Model
 
 
-For a sentence $S = w_1, w_2,..., w_k$, we have
-
-$$
-p(S) = \prod_{i=1}^{k} p(w_i | context)
-$$
+For a sentence <!-- S = w_1, w_2,..., w_k --> ![](https://user-images.githubusercontent.com/13825126/51437437-6d600100-1cd9-11e9-993a-c119186c5f6e.gif), we have
 
 
+![](https://user-images.githubusercontent.com/13825126/51437439-7355e200-1cd9-11e9-88fe-3d4c9fc2229b.gif)
+<!-- p(S) = \prod_{i=1}^{k} p(w_i | context) -->
 
-In traditional language model, such as RNN,  $context = w_1, ..., w_{i-1}$, 
-$$
-p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1})
-$$
 
-In bidirectional language model, it has larger context, $context = w_1, ..., w_{i-1},w_{i+1},...,w_k$.
+In traditional language model, such as RNN,  <!-- context = w_1, ..., w_{i-1} --> ![equ3](https://user-images.githubusercontent.com/13825126/51437440-73ee7880-1cd9-11e9-9a78-7cf21bd04bf6.gif), 
+
+![equ4](https://user-images.githubusercontent.com/13825126/51437441-781a9600-1cd9-11e9-8d6d-4a720d04347c.gif)
+<!-- p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1}) -->
+
+In bidirectional language model, it has larger context, <!-- context = w_1, ..., w_{i-1},w_{i+1},...,w_k -->
+![equ5](https://user-images.githubusercontent.com/13825126/51437442-781a9600-1cd9-11e9-8207-87718b8f6a28.gif).
 In this implementation, we simply adopt the following approximation,
 
-$$
-p(S) \approx \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k)
-$$
+![equ6](https://user-images.githubusercontent.com/13825126/51437443-78b32c80-1cd9-11e9-917e-88824d3e456f.gif)
+<!-- p(S) \approx \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k) -->
+
 <!--
 1. 近似相等
 2. 句子越长，单个word预测的概率越大，ppl越大？传统的RNN也有这个问题
