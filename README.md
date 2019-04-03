@@ -1,25 +1,21 @@
 ## BERT as Language Model
 
+For a sentence <img src="https://www.zhihu.com/equation?tex=S%20=%20w_1,%20w_2,...,%20w_k" alt="S = w_1, w_2,..., w_k" eeimg="1"> , we have
 
-For a sentence <!-- S = w_1, w_2,..., w_k --> ![](https://user-images.githubusercontent.com/13825126/51437437-6d600100-1cd9-11e9-993a-c119186c5f6e.gif), we have
-
-
-![](https://user-images.githubusercontent.com/13825126/51437439-7355e200-1cd9-11e9-88fe-3d4c9fc2229b.gif)
-<!-- p(S) = \prod_{i=1}^{k} p(w_i | context) -->
+<img src="https://www.zhihu.com/equation?tex=p(S)%20=%20\prod_{i=1}^{k}%20p(w_i%20|%20context)" alt="p(S) = \prod_{i=1}^{k} p(w_i | context)" eeimg="1"> 
 
 
-In traditional language model, such as RNN,  <!-- context = w_1, ..., w_{i-1} --> ![equ3](https://user-images.githubusercontent.com/13825126/51437440-73ee7880-1cd9-11e9-9a78-7cf21bd04bf6.gif), 
+In traditional language model, such as RNN,  <img src="https://www.zhihu.com/equation?tex=context%20=%20w_1,%20...,%20w_{i-1}" alt="context = w_1, ..., w_{i-1}" eeimg="1"> , 
 
-![equ4](https://user-images.githubusercontent.com/13825126/51437441-781a9600-1cd9-11e9-8d6d-4a720d04347c.gif)
-<!-- p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1}) -->
+<img src="https://www.zhihu.com/equation?tex=p(S)%20=%20\prod_{i=1}^{k}%20p(w_i%20|%20w_1,%20...,%20w_{i-1})" alt="p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1})" eeimg="1">
 
-In bidirectional language model, it has larger context, <!-- context = w_1, ..., w_{i-1},w_{i+1},...,w_k -->
-![equ5](https://user-images.githubusercontent.com/13825126/51437442-781a9600-1cd9-11e9-8207-87718b8f6a28.gif).
+
+In bidirectional language model, it has larger context, <img src="https://www.zhihu.com/equation?tex=context%20=%20w_1,%20...,%20w_{i-1},w_{i+1},...,w_k" alt="context = w_1, ..., w_{i-1},w_{i+1},...,w_k" eeimg="1">.
 
 In this implementation, we simply adopt the following approximation,
 
-![equ6](https://user-images.githubusercontent.com/13825126/51437443-78b32c80-1cd9-11e9-917e-88824d3e456f.gif)
-<!-- p(S) \approx \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k) -->
+<img src="https://www.zhihu.com/equation?tex=p(S)%20\approx%20\prod_{i=1}^{k}%20p(w_i%20|%20w_1,%20...,%20w_{i-1},w_{i+1},%20...,w_k)" alt="p(S) \approx \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k)" eeimg="1">.
+
 
 <!--
 1. 近似相等
