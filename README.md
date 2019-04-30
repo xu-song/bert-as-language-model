@@ -10,11 +10,11 @@ In traditional language model, such as RNN,  <img src="https://www.zhihu.com/equ
 <img src="https://www.zhihu.com/equation?tex=p(S)%20=%20\prod_{i=1}^{k}%20p(w_i%20|%20w_1,%20...,%20w_{i-1})" alt="p(S) = \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1})" eeimg="1">
 
 
-In bidirectional language model, it has larger context, <img src="https://www.zhihu.com/equation?tex=context%20=%20w_1,%20...,%20w_{i-1},w_{i+1},...,w_k" alt="context = w_1, ..., w_{i-1},w_{i+1},...,w_k" eeimg="1">.
+In bidirectional language model, it has larger context, <img src="https://www.zhihu.com/equation?tex=context+%3d+w_1%2c+...%2c+w_%7bi-1%7d%2cw_%7bi%2b1%7d%2c...%2cw_k" alt="context = w_1, ..., w_{i-1},w_{i+1},...,w_k" eeimg="1">.
 
 In this implementation, we simply adopt the following approximation,
 
-<img src="https://www.zhihu.com/equation?tex=p(S)%20\approx%20\prod_{i=1}^{k}%20p(w_i%20|%20w_1,%20...,%20w_{i-1},w_{i+1},%20...,w_k)" alt="p(S) \approx \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k)" eeimg="1">.
+<img src="https://www.zhihu.com/equation?tex=p(S)+%5capprox+%5cprod_%7bi%3d1%7d%5e%7bk%7d+p(w_i+%7c+w_1%2c+...%2c+w_%7bi-1%7d%2cw_%7bi%2b1%7d%2c+...%2cw_k)" alt="p(S) \approx \prod_{i=1}^{k} p(w_i | w_1, ..., w_{i-1},w_{i+1}, ...,w_k)" eeimg="1">.
 
 
 <!--
