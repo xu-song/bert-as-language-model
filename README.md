@@ -59,6 +59,8 @@ $ cat /tmp/lm/output/test_result.json
 output:
 
 ```yml
+# prob: probability
+# ppl:  perplexity
 [
   {
     "tokens": [
